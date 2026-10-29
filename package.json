@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "present": "sh -c 'presenterm --config-file \"md/config/$1.yaml\" \"$2\"' --",
+    "pdf": "sh -c 'name=${2##*/}; name=${name%.md}; mkdir -p \"pdf/$1\" && presenterm --config-file \"md/config/$1.yaml\" \"$2\" --export-pdf --output \"pdf/$1/$name-$1.pdf\"' --"
   },
   "keywords": [],
   "author": "",
