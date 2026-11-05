@@ -68,6 +68,7 @@ function addTen(score: number) {
 }
 
 console.log(addTen(80)); // 90
+
 // addTen("80");        // Type error
 ```
 
@@ -110,7 +111,7 @@ mkdir src
 
 <!-- end_slide -->
 
-# Copy This Starter Configuration
+# Starter Configuration
 
 Create a file named `tsconfig.json` in the practice folder:
 
@@ -128,8 +129,6 @@ Create a file named `tsconfig.json` in the practice folder:
 ```
 
 Keep `strict: true` so the checker helps us catch more mistakes.
-
-We will use these settings without studying each one today.
 
 <!-- end_slide -->
 
@@ -163,13 +162,13 @@ This **runs** the program and prints `Maya`.
 npx tsc --noEmit
 ```
 
-This **checks** the types without creating JavaScript files.
+This **checks** the types without creating JavaScript files. 
 
 No error messages from the checker means the type check passed.
 
 <!-- end_slide -->
 
-# Three Types to Start With
+# More Types to Start With
 
 ```typescript
 let courseName: string = "Internet Applications";
@@ -193,6 +192,7 @@ The part after `:` is called a **type annotation**.
 let score: number = 80;
 
 score = 90; // OK: another number
+
 // score = "90"; // Type error: this is a string
 ```
 
@@ -200,8 +200,6 @@ score = 90; // OK: another number
 
 - A variable's value can change while keeping the same type.
 - `90` and `"90"` have different types.
-- Uncomment the last line and run `npx tsc --noEmit`.
-- Read the error, then comment the line again.
 
 <!-- end_slide -->
 
@@ -211,6 +209,7 @@ score = 90; // OK: another number
 let score = 80;
 
 score = 90; // OK
+
 // score = "90"; // Still a type error
 ```
 
@@ -222,27 +221,6 @@ score = 90; // OK
 
 <!-- end_slide -->
 
-# Try It: Three Variables
-
-In `src/index.ts`, create:
-
-1. `assignmentTitle`: a string.
-2. `maxScore`: a number.
-3. `completed`: a boolean.
-
-Print all three with `console.log()`.
-
-<!-- pause -->
-
-Check your code, then run it:
-
-```bash
-npx tsc --noEmit
-npx tsx src/index.ts
-```
-
-<!-- end_slide -->
-
 # Give a Function an Input Type
 
 ```typescript
@@ -251,6 +229,7 @@ function greet(name: string) {
 }
 
 console.log(greet("Maya")); // Hello, Maya
+
 // greet(42);              // Type error
 ```
 
@@ -277,44 +256,18 @@ console.log(doubleScore(20)); // 40
 
 <!-- end_slide -->
 
-# Try It: A Simple Function
-
-Write a function named `assignmentMessage`.
-
-- It accepts one input: `title`, a string.
-- It returns a string: `"Assignment: "` followed by the title.
-
-Start here:
-
-```typescript
-function assignmentMessage(title: string): string {
-  // Write your return statement here.
-}
-```
-
-`assignmentMessage("Practice types")` should return:
-
-```text
-Assignment: Practice types
-```
-
-<!-- end_slide -->
-
 # Arrays: A List of One Type
 
 ```typescript
 const scores: number[] = [70, 80, 90];
 
 scores.push(100); // OK
+
 // scores.push("100"); // Type error
 ```
 
 - `number[]` means “an array of numbers.”
 - `string[]` means “an array of strings.”
-
-<!-- pause -->
-
-Try creating a `string[]` containing three student names.
 
 <!-- end_slide -->
 
@@ -459,6 +412,7 @@ if (lesson.description !== undefined) {
 let value: any = "Maya";
 
 value = 42; // Allowed
+
 // value.toUpperCase(); // Checker allows it; running it fails
 ```
 

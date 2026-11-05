@@ -67,7 +67,7 @@ Content-Type: application/json; charset=utf-8
 - Express is a web framework that runs on Node.js.
 - It helps us decide how to handle HTTP requests.
 - We connect a method and a path to a JavaScript function.
-- That function can send text, JSON, or other responses.
+- That function can send text, JSON, html, or other responses.
 - In this lesson, we will use Express 5 with TypeScript.
 
 <!-- end_slide -->
@@ -78,10 +78,10 @@ Content-Type: application/json; charset=utf-8
 Client sends a request
         |
         v
-Middleware does some work
+Middleware handle request and does some work
         |
         v
-A matching route handles the request
+A matching route handles the request and generate response
         |
         v
 Client receives a response
@@ -419,7 +419,8 @@ app.get("/", (req, res) => { res.send("Hello World!");});
 
 app.get("/health", (req, res) => { res.json({ status: "ok" }); });
 
-app.listen(3000, () => console.log("Server: http://localhost:3000"););
+app.listen(3000, 
+    () => console.log("Server: http://localhost:3000"););
 ```
 
 <!-- end_slide -->
